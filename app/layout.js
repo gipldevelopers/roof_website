@@ -16,10 +16,10 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata = {
-  title: 'MaxRoof | Modern Construction & Roofing Solutions',
+  title: 'Roofy | Modern Construction & Roofing Solutions',
   description: 'Leading provider of premium metal roofing, pre-engineered buildings, and industrial construction solutions. Quality, durability, and innovation.',
   openGraph: {
-    title: 'MaxRoof | Modern Construction & Roofing Solutions',
+    title: 'Roofy | Modern Construction & Roofing Solutions',
     description: 'Leading provider of premium metal roofing, pre-engineered buildings, and industrial construction solutions. Quality, durability, and innovation.',
     type: 'website',
   },

@@ -17,10 +17,21 @@ export function Carousel3D({
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [currentX, setCurrentX] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const sliderRef = useRef(null);
   const dragThreshold = 50;
 
   const totalItems = items.length;
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const getCardClass = (index) => {
     let diff = index - currentIndex;
@@ -31,9 +42,12 @@ export function Carousel3D({
     
     if (diff === 0) return 'card-active';
     if (diff === 1) return 'card-right-1';
-    if (diff === 2) return 'card-right-2';
     if (diff === -1) return 'card-left-1';
-    if (diff === -2) return 'card-left-2';
+
+    if (!isMobile) {
+      if (diff === 2) return 'card-right-2';
+      if (diff === -2) return 'card-left-2';
+    }
     
     return 'card-hidden';
   };
@@ -138,11 +152,11 @@ export function Carousel3D({
   }, [totalItems]);
 
   return (
-    <div className={cn("w-full max-w-7xl mx-auto relative overflow-hidden", className)} {...props}>
+    <div className={cn("w-full mx-auto relative overflow-hidden", className)} {...props}>
       {/* Slider Wrapper */}
       <div
         ref={sliderRef}
-        className="relative w-full h-[300px] sm:h-[380px] md:h-[500px] lg:h-[600px] flex items-center justify-center cursor-grab active:cursor-grabbing overflow-hidden"
+        className="relative w-full h-[300px] sm:h-[380px] md:h-[500px] lg:h-[500px] flex items-center justify-center cursor-grab active:cursor-grabbing overflow-hidden"
         style={{ perspective: '1200px', touchAction: 'pan-y' }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => {
@@ -158,7 +172,7 @@ export function Carousel3D({
       >
         {/* Slider Track */}
         <div 
-          className="relative w-full h-full flex items-center justify-center"
+          className="relative w-full h-auto flex items-center justify-center"
           style={{ transformStyle: 'preserve-3d' }}
         >
           {items.map((item, index) => {
@@ -194,7 +208,7 @@ export function Carousel3D({
       </div>
 
       {/* Dots Navigation */}
-      <div className="flex justify-center gap-2 sm:gap-3 mt-6 sm:mt-8 md:mt-9">
+      <div className="flex justify-center gap-2 sm:gap-3 ">
         {items.map((_, index) => (
           <button
             key={index}

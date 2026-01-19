@@ -51,6 +51,7 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        'light-brown': 'hsl(var(--light-brown))',
       },
     },
   },

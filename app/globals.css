@@ -5,8 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -36,28 +36,31 @@
 
 :root {
   /* Modern Industrial Palette */
-  /* Primary: Deep Tech Blue */
-  --primary: 215 45% 25%;
-  --primary-foreground: 210 40% 98%;
+  /* Primary: Vibrant Orange #F26238 */
+  --primary: 14 89% 58%;
+  --primary-foreground: 0 0% 100%;
 
-  /* Accent: Safety/Industrial Yellow/Orange */
-  --accent: 35 90% 55%;
-  --accent-foreground: 215 45% 25%;
+  /* Secondary: Deep Blue #144168 */
+  --secondary: 208 68% 24%;
+  --secondary-foreground: 0 0% 100%;
 
-  /* Backgrounds: Clean White to Light Grey */
-  --background: 0 0% 100%;
+  /* Accent: Matches Secondary Blue */
+  --accent: 208 68% 24%;
+  --accent-foreground: 0 0% 100%;
+
+  /* Backgrounds: Warm Off-White #FAF7F5 */
+  --background: 30 20% 97%;
   --foreground: 215 25% 15%;
+  
+  /* Custom: Light Brown for Nav/Footer #E8E2DC */
+  --light-brown: 30 18% 89%;
 
   /* Cards & Surfaces */
   --card: 0 0% 100%;
   --card-foreground: 215 25% 15%;
-  
+
   --popover: 0 0% 100%;
   --popover-foreground: 215 25% 15%;
-
-  /* Secondary: Cool Grey */
-  --secondary: 210 20% 96%;
-  --secondary-foreground: 215 45% 25%;
 
   /* Muted */
   --muted: 210 20% 96%;
@@ -112,8 +115,13 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display tracking-tight font-bold;
   }
 }
@@ -122,7 +130,7 @@
   .clip-path-slant {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
   }
-  
+
   .clip-path-slant-reverse {
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
   }
@@ -172,28 +180,28 @@
 /* Tablet & Desktop (768px+) - 5 cards visible (2 left, 1 center, 2 right) */
 @media (min-width: 768px) {
   .card-right-1 {
-    transform: translateX(110%) translateZ(-50px) scale(0.85);
+    transform: translateX(50%) translateZ(-50px) scale(0.85);
     opacity: 0.85;
     z-index: 9;
     pointer-events: auto;
   }
 
   .card-right-2 {
-    transform: translateX(220%) translateZ(-100px) scale(0.75);
+    transform: translateX(100%) translateZ(-100px) scale(0.75);
     opacity: 0.7;
     z-index: 8;
     pointer-events: auto;
   }
 
   .card-left-1 {
-    transform: translateX(-110%) translateZ(-50px) scale(0.85);
+    transform: translateX(-50%) translateZ(-50px) scale(0.85);
     opacity: 0.85;
     z-index: 9;
     pointer-events: auto;
   }
 
   .card-left-2 {
-    transform: translateX(-220%) translateZ(-100px) scale(0.75);
+    transform: translateX(-100%) translateZ(-100px) scale(0.75);
     opacity: 0.7;
     z-index: 8;
     pointer-events: auto;

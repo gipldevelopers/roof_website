@@ -90,8 +90,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg text-foreground">Email</h3>
-                    <p className="text-muted-foreground">sales@maxroof.com</p>
-                    <p className="text-muted-foreground">support@maxroof.com</p>
+                    <p className="text-muted-foreground">sales@roofy.com</p>
+                    <p className="text-muted-foreground">support@roofy.com</p>
                   </div>
                 </div>
               </div>

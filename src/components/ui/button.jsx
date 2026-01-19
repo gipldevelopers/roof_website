@@ -3,12 +3,9 @@ import { cn } from "@/lib/utils"
 
 const Button = React.forwardRef(({ className, variant = "default", size = "default", ...props }, ref) => {
   const variants = {
-    default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md hover:shadow-lg",
-    primary: "bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300",
-    secondary: "bg-accent text-primary hover:bg-accent/90 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300",
-    tertiary: "bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white shadow-sm hover:shadow-md transition-all duration-300",
-    destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-    outline: "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
+    default: "relative overflow-hidden font-semibold transition-all duration-300 bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg before:absolute before:inset-0 before:bg-gradient-to-r before:from-primary/0 before:via-white/20 before:to-primary/0 before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700",
+    secondary: "bg-secondary text-white hover:bg-secondary/90 shadow-md hover:shadow-lg hover:scale-105 transition-all duration-300",
+    outline: "border-2 border-gray-300 text-gray-700 hover:bg-gray-50 hover:shadow-md hover:border-secondary hover:text-secondary transition-all duration-300 bg-transparent",
     ghost: "hover:bg-accent hover:text-accent-foreground",
     link: "text-primary underline-offset-4 hover:underline",
   }

@@ -3,13 +3,12 @@
 import * as React from "react";
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function TestimonialSlider({ 
-  testimonials, 
+export function BrandSlider({ 
+  logos = [], 
   autoPlay = true,
-  interval = 5000,
+  interval = 3000,
   className,
   ...props 
 }) {
@@ -22,23 +21,21 @@ export function TestimonialSlider({
   const sliderRef = useRef(null);
   const containerRef = useRef(null);
   const dragThreshold = 50;
-  const scrollTimeoutRef = useRef(null);
 
-  const totalItems = testimonials.length;
+  const totalItems = logos.length;
   
-  // Cards per view: Mobile (2), Tablet (3), Desktop (4)
-  // We'll use CSS to handle responsive display, but calculate based on viewport
-  const [cardsPerView, setCardsPerView] = useState(2);
+  // Cards per view: Mobile (3), Tablet (4), Desktop (6)
+  const [cardsPerView, setCardsPerView] = useState(3);
 
   useEffect(() => {
     const updateCardsPerView = () => {
       if (typeof window !== 'undefined') {
         if (window.innerWidth >= 1024) {
-          setCardsPerView(4); // Desktop
+          setCardsPerView(6); // Desktop
         } else if (window.innerWidth >= 768) {
-          setCardsPerView(3); // Tablet
+          setCardsPerView(4); // Tablet
         } else {
-          setCardsPerView(2); // Mobile
+          setCardsPerView(3); // Mobile
         }
       }
     };
@@ -65,14 +62,6 @@ export function TestimonialSlider({
     });
     setDragOffset(0);
   };
-
-  const goToSlide = (index) => {
-    const targetIndex = Math.min(index, maxIndex);
-    setCurrentIndex(targetIndex);
-    setDragOffset(0);
-  };
-
-
 
   // Auto-play
   useEffect(() => {
@@ -121,11 +110,11 @@ export function TestimonialSlider({
     setCurrentX(0);
   };
 
-  // Mouse Events with Window Binding for smoother drag
+  // Mouse Events with Window Binding
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (!isDragging) return;
-      e.preventDefault(); // Prevent text selection
+      e.preventDefault();
       const current = e.clientX;
       setCurrentX(current);
       const diff = startX - current;
@@ -182,11 +171,8 @@ export function TestimonialSlider({
       className={cn("relative w-full overflow-hidden", className)} 
       {...props}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => {
-        setIsHovered(false);
-      }}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Slider Container */}
       <div
         ref={sliderRef}
         className={cn(
@@ -200,7 +186,7 @@ export function TestimonialSlider({
         style={{ touchAction: 'pan-y pinch-zoom' }}
       >
         <motion.div
-          className="flex"
+          className="flex items-center"
           animate={{
             x: `${getTranslateX()}%`,
           }}
@@ -210,76 +196,27 @@ export function TestimonialSlider({
             damping: 30,
           }}
         >
-          {testimonials.map((testimonial, index) => (
+          {logos.map((logo, index) => (
             <div
-              key={testimonial.id || index}
-              className="flex-shrink-0 px-2 sm:px-3"
+              key={logo.id || index}
+              className="flex-shrink-0 px-4 md:px-6"
               style={{ width: `${100 / cardsPerView}%` }}
             >
-              <div 
-                data-testimonial-card
-                className="bg-white rounded-xl md:rounded-2xl p-4 md:p-6 h-[300px] md:h-[200px] lg:h-[300px] shadow-md border border-gray-100 hover:shadow-lg transition-shadow flex flex-col"
-              >
-                {/* Stars */}
-                <div className="flex gap-0.5 md:gap-1 mb-3 md:mb-4 shrink-0">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-3 h-3 md:w-4 md:h-4 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
+              <div className="flex flex-col items-center justify-center gap-3 opacity-60 hover:opacity-100 transition-opacity duration-300">
+                <div className="h-12 md:h-16 w-full flex items-center justify-center">
+                   {/* Placeholder for actual logo - using text/icon style for now if image fails, or the image itself */}
+                   <img 
+                    src={logo.logo} 
+                    alt={logo.name} 
+                    className="max-h-full max-w-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                   />
                 </div>
-
-                {/* Testimonial Text - Scrollable */}
-                <div className="flex-1 overflow-y-auto custom-scrollbar">
-                  <p className="text-gray-700 text-xs md:text-sm lg:text-base leading-relaxed">
-                    "{testimonial.quote}"
-                  </p>
-                </div>
-
-                {/* Author Info */}
-                <div className="flex items-center gap-2 md:gap-3 shrink-0">
-                  <div className="w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white font-bold text-sm md:text-base lg:text-lg shrink-0">
-                    {testimonial.author.charAt(0)}
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="font-semibold text-gray-900 text-xs md:text-sm lg:text-base truncate">
-                      {testimonial.author}
-                    </div>
-                    <div className="text-gray-500 text-[10px] md:text-xs lg:text-sm truncate">
-                      {testimonial.role}
-                    </div>
-                    {testimonial.company && (
-                      <div className="text-gray-400 text-[10px] md:text-xs truncate">
-                        {testimonial.company}
-                      </div>
-                    )}
-                  </div>
-                </div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{logo.name}</span>
               </div>
             </div>
           ))}
         </motion.div>
       </div>
-
-      {/* Dots Indicator */}
-      {totalItems > cardsPerView && (
-        <div className="flex justify-center gap-2 mt-4 md:mt-6">
-          {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={cn(
-                "h-2 rounded-full transition-all duration-300",
-                currentIndex === index
-                  ? "bg-primary w-6 md:w-8"
-                  : "bg-gray-300 hover:bg-gray-400 w-2"
-              )}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-      )}
     </div>
   );
 }

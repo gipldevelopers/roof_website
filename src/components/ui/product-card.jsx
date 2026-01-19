@@ -12,7 +12,7 @@ export function ProductCard({ product, variant = "default", className, isActive,
     default: "bg-white border-border/50 hover:shadow-xl",
     elevated: "bg-white border-border/50 shadow-lg hover:shadow-2xl hover:-translate-y-1",
     minimal: "bg-transparent border-border/30 hover:bg-white/50",
-    "3d": "bg-white rounded-2xl overflow-hidden border-2 border-gray-200 w-[180px] h-[240px] sm:w-[220px] sm:h-[300px] md:w-[320px] md:h-[400px] lg:w-[420px] lg:h-[540px]",
+    "3d": "bg-white rounded-2xl overflow-hidden border-2 border-gray-200 w-[180px] h-[240px] sm:w-[220px] sm:h-[300px] md:w-[320px] md:h-[400px] lg:w-[360px] lg:h-[420px]",
   };
 
   // 3D carousel variant
@@ -29,7 +29,7 @@ export function ProductCard({ product, variant = "default", className, isActive,
         }}
         {...props}
       >
-        <div className="w-full h-[110px] sm:h-[140px] md:h-[200px] lg:h-[300px] overflow-hidden relative">
+        <div className="w-full h-[110px] sm:h-[140px] md:h-[200px] lg:h-[200px] overflow-hidden relative">
           <img 
             src={product.image} 
             alt={product.title} 
@@ -50,7 +50,7 @@ export function ProductCard({ product, variant = "default", className, isActive,
             <div className="text-accent text-[8px] sm:text-[9px] md:text-xs lg:text-sm font-semibold uppercase tracking-wider truncate">
               {product.category}
             </div>
-            <Link href="/products">
+            <Link href={`/products/${product.id}`}>
               <Button variant="primary" size="sm" className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-7 lg:py-3.5 rounded-lg md:rounded-xl font-bold uppercase tracking-wide whitespace-nowrap">
                 Learn More
               </Button>
@@ -97,7 +97,7 @@ export function ProductCard({ product, variant = "default", className, isActive,
           {product.description}
         </p>
         <div className="flex items-center gap-2">
-          <Link href="/products" className="flex-1">
+          <Link href={`/products/${product.id}`} className="flex-1">
             <Button variant="primary" size="sm" className="w-full text-xs h-8 px-3">
               Learn More
             </Button>

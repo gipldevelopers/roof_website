@@ -91,7 +91,7 @@ export default function ServiceDetail() {
                      <h2 className="text-3xl font-display font-bold text-slate-900 mb-8">Service Overview</h2>
                      <div className="prose prose-lg text-slate-600 mb-12">
                         <p>
-                            At MaxRoof, our <strong>{service.title}</strong> service is designed to meet the rigorous demands of modern industrial and commercial construction. 
+                            At Roofy, our <strong>{service.title}</strong> service is designed to meet the rigorous demands of modern industrial and commercial construction. 
                             We leverage advanced technology and seasoned expertise to ensure that your project is executed flawlessly.
                         </p>
                         <p>

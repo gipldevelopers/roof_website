@@ -37,7 +37,7 @@ export default function Home() {
       title: "Superior Durability",
       desc: "Materials tested for extreme weather conditions.",
       icon: ShieldCheck,
-      image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=800&auto=format&fit=crop",
+      image: "/whyus/Superior Durability Materials tested for extreme weather conditions..jpg",
       alt: "Durable Construction",
       content: "Our materials undergo rigorous testing to withstand extreme weather conditions, ensuring your structure remains strong and protected for decades."
     },
@@ -45,7 +45,7 @@ export default function Home() {
       title: "Precision Engineering",
       desc: "Custom designed to millimeter accuracy.",
       icon: Ruler,
-      image: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c7c?q=80&w=800&auto=format&fit=crop",
+      image: "/whyus/Precision Engineering.jpg",
       alt: "Precision Engineering",
       content: "Every component is custom-designed with millimeter precision, ensuring perfect fit and optimal performance for your specific requirements."
     },
@@ -53,7 +53,7 @@ export default function Home() {
       title: "Rapid Installation",
       desc: "Pre-engineered systems for faster project completion.",
       icon: Factory,
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
+      image: "/whyus/Rapid Installation.jpg",
       alt: "Fast Installation",
       content: "Our pre-engineered building systems are designed for rapid assembly, reducing construction time by up to 50% compared to traditional methods."
     },
@@ -61,7 +61,7 @@ export default function Home() {
       title: "Energy Efficient",
       desc: "Advanced insulation systems reduce energy consumption.",
       icon: CheckCircle2,
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop",
+      image: "/whyus/Energy Efficient.jpg",
       alt: "Energy Efficient",
       content: "Advanced insulation and energy-efficient designs help reduce operational costs while maintaining optimal indoor comfort throughout the year."
     }
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       {/* Brand Logos Section */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      <section className="py-10 bg-white border-t border-gray-100">
         <div className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-2">
@@ -130,7 +130,7 @@ export default function Home() {
       </section>
 
       {/* Featured Products */}
-      <section className="py-16 bg-gradient-to-b from-secondary/30 to-background overflow-hidden">
+      <section className="py-10 bg-gradient-to-b from-secondary/30 to-background overflow-hidden">
         <div className="container mx-auto px-4">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

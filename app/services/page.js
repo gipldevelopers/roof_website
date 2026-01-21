@@ -72,7 +72,7 @@ export default function Services() {
               <div className="flex-1 w-full">
                 <div className={`relative aspect-video rounded-2xl overflow-hidden shadow-2xl ${isEven ? 'rounded-tl-[5rem]' : 'rounded-tr-[5rem]'}`}>
                   <img 
-                    src={`https://images.unsplash.com/photo-${index === 0 ? '1581094794329-c8112a89af12' : index === 1 ? '1503387762-592deb58ef4e' : '1581092160562-40aa08e78837'}?q=80&w=800&auto=format&fit=crop`}
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover"
                   />

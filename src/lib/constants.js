@@ -12,42 +12,42 @@ export const PRODUCTS = [
     id: "metal-roofing",
     title: "Metal Roofing Systems",
     description: "Premium standing seam and corrugated metal roofing for industrial and commercial applications.",
-    image: "https://images.unsplash.com/photo-1621255530268-80949a889445?q=80&w=800&auto=format&fit=crop",
+    image: "/product/Metal Roofing Systems.jpg",
     category: "Roofing"
   },
   {
     id: "peb-structures",
     title: "Pre-Engineered Buildings",
     description: "Custom-designed steel buildings optimized for strength, efficiency, and rapid installation.",
-    image: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c7c?q=80&w=800&auto=format&fit=crop",
+    image: "/product/Pre-Engineered Buildings.jpg",
     category: "PEB"
   },
   {
     id: "steel-decking",
     title: "Steel Decking Sheets",
     description: "High-strength composite floor decking solutions for multi-story construction.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop",
+    image: "/product/Steel Decking Sheets.jpg",
     category: "Structural"
   },
   {
     id: "cladding",
     title: "Wall Cladding Systems",
     description: "Aesthetic and durable wall cladding options for modern architectural facades.",
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop",
+    image: "/product/Wall Cladding Systems.jpg",
     category: "Cladding"
   },
   {
     id: "skylights",
     title: "Polycarbonate Skylights",
     description: "UV-protected transparency sheets for natural lighting in industrial buildings.",
-    image: "https://images.unsplash.com/photo-1510906594845-bc082582c8cc?q=80&w=800&auto=format&fit=crop",
+    image: "/product/Polycarbonate Skylights.jpg",
     category: "Roofing"
   },
   {
     id: "purlins",
     title: "Z & C Purlins",
     description: "High-tensile galvanized purlins for secondary structural support.",
-    image: "https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?q=80&w=800&auto=format&fit=crop",
+    image: "/product/Z & C Purlins.jpg",
     category: "Structural"
   }
 ];
@@ -57,19 +57,22 @@ export const SERVICES = [
     id: "installation",
     title: "Expert Installation",
     description: "Professional installation services by certified teams ensuring weather-tight performance.",
-    icon: "Hammer"
+    icon: "Hammer",
+    image: "/services/Expert Installation.jpg"
   },
   {
     id: "consultation",
     title: "Design Consultation",
     description: "Technical support and design optimization for your roofing and structural needs.",
-    icon: "FileText"
+    icon: "FileText",
+    image: "/services/Design Consultation.jpg"
   },
   {
     id: "maintenance",
     title: "Maintenance & Repair",
     description: "Comprehensive maintenance programs to extend the lifespan of your roofing assets.",
-    icon: "Wrench"
+    icon: "Wrench",
+    image: "/services/Maintenance & Repair.jpg"
   }
 ];
 

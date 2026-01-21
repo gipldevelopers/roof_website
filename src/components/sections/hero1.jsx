@@ -51,7 +51,7 @@ function HeroHeading() {
 
 function StatsGroup() {
   return (
-    <div className="flex flex-wrap gap-4 mb-1">
+    <div className="flex  gap-4 mb-1">
       {STATS.map((item, i) => (
         <div key={i} className="flex items-center gap-2 bg-white/50 px-3 py-1.5 rounded-full border border-gray-100">
           <item.icon className={`w-4 h-4 ${item.color}`} />
@@ -64,17 +64,14 @@ function StatsGroup() {
 
 function ActionButtons() {
   return (
-    <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-2 w-full sm:w-auto">
+    <div className="flex flex-row gap-3 mb-2 w-auto ">
       <Link href="/contact" className="w-full sm:w-auto">
-        <Button size="lg" className="w-full sm:w-auto h-12 px-8 rounded-full text-base shadow-lg hover:shadow-xl group bg-primary hover:bg-primary/90">
+        <Button size="lg" className="w-auto h-12 px-4 rounded-full text-base shadow-lg hover:shadow-xl group bg-primary hover:bg-primary/90">
           Get Free Quote
-          <div className="ml-2 w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-            <ArrowRight className="w-3 h-3 text-white" />
-          </div>
         </Button>
       </Link>
       <Link href="/services" className="w-full sm:w-auto">
-        <Button variant="outline" size="lg" className="w-full sm:w-auto h-12 px-8 rounded-full text-base border-gray-300 hover:border-gray-400 hover:bg-gray-50/80 backdrop-blur-sm bg-white/50">
+        <Button variant="outline" size="lg" className="w-auto h-12 px-4 rounded-full text-base border-gray-300 hover:border-gray-400 hover:bg-gray-50/80 backdrop-blur-sm bg-white/50">
           View Services
         </Button>
       </Link>
@@ -88,7 +85,7 @@ function FloatingConfigCard() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3, duration: 0.6 }}
-      className="bg-white rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 max-w-[260px] lg:max-w-[320px] mb-6"
+      className="bg-white rounded-xl lg:rounded-2xl p-3 lg:p-4 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 max-w-auto lg:max-w-[320px] mb-6"
     >
       <div className="flex justify-between items-center mb-2 lg:mb-3">
         <h3 className="font-semibold text-gray-900 text-xs lg:text-sm">Modern Roof Style</h3>
@@ -312,8 +309,7 @@ export default function Hero1() {
             <div className="flex flex-col gap-6 lg:hidden w-full max-w-[360px] mx-auto sm:mx-0">
               <ActionButtons />
               
-              <div className="p-4 rounded-2xl bg-white/60 backdrop-blur-md border border-white/50 shadow-sm">
-                 <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Trusted By</h3>
+              <div className="">
                  <div className="flex flex-wrap gap-3">
                     <StatsGroup />
                  </div>

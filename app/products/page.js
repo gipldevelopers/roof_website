@@ -18,7 +18,7 @@ export default function Products() {
     : PRODUCTS.filter(p => p.category === filter);
 
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-16 pb-16">
       <section className="bg-secondary/30 py-16 mb-12">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-display font-bold text-primary mb-6">Our Products</h1>
@@ -26,12 +26,12 @@ export default function Products() {
             Engineered for durability and performance, our product range covers everything from roofing sheets to complete PEB structures.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-nowrap sm:flex-wrap justify-start sm:justify-center gap-3 overflow-x-auto pb-4 sm:pb-0 scrollbar-hide px-4 sm:px-0">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
+                className={`px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap ${
                   filter === cat 
                     ? "bg-primary text-white shadow-lg scale-105" 
                     : "bg-white text-foreground hover:bg-white/80 border border-border"
@@ -55,7 +55,7 @@ export default function Products() {
           </h2>
           <motion.div 
             layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8"
           >
             <AnimatePresence>
               {filteredProducts.map((product) => (

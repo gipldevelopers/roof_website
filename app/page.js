@@ -323,10 +323,10 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link href="/projects">
-                  <Button size="lg" variant="outline" className="h-14 px-10 border-white/20 hover:border-white hover:bg-white/10 text-white text-lg rounded-full">
+                  <Button size="lg" variant="outline" className="h-14 px-10 border-white/20 hover:border-white hover:bg-white text-white text-lg rounded-full">
                     View Portfolio
                   </Button>
-                </Link>
+                </Link>                                         
               </div>
             </div>
           </div>

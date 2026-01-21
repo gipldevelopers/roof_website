@@ -128,10 +128,10 @@ export default function FAQSection() {
             <HelpCircle className="w-4 h-4" />
             Knowledge Base
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-foreground mb-3">
             Frequently Asked Questions
           </h2>
-          <p className="text-gray-600 text-lg md:text-xl">
+          <p className="text-muted-foreground text-sm md:text-base">
             Find answers to common questions about our metal roofing and pre-engineered building solutions
           </p>
         </motion.div>

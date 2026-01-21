@@ -76,7 +76,9 @@ export function Carousel3D({
 
   // Touch Events
   const handleTouchStart = (e) => {
-    setStartX(e.touches[0].clientX);
+    const x = e.touches[0].clientX;
+    setStartX(x);
+    setCurrentX(x);
     setIsDragging(true);
   };
 
@@ -105,6 +107,7 @@ export function Carousel3D({
   // Mouse Events
   const handleMouseDown = (e) => {
     setStartX(e.clientX);
+    setCurrentX(e.clientX);
     setIsDragging(true);
   };
 

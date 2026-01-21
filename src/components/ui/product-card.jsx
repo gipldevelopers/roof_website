@@ -51,7 +51,10 @@ export function ProductCard({ product, variant = "default", className, isActive,
               {product.category}
             </div>
             <Link href={`/products/${product.id}`}>
-              <Button variant="primary" size="sm" className="text-[9px] sm:text-[10px] md:text-xs lg:text-sm px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 lg:px-7 lg:py-3.5 rounded-lg md:rounded-xl font-bold uppercase tracking-wide whitespace-nowrap">
+              <Button 
+                variant="default" 
+                className="text-[9px] md:text-xs lg:text-sm h-7 md:h-10 lg:h-12 px-3 sm:px-5 md:px-6 lg:px-10 rounded-full font-bold uppercase tracking-wider shadow-lg hover:shadow-primary/20 transition-all duration-300"
+              >
                 Learn More
               </Button>
             </Link>
@@ -99,7 +102,10 @@ export function ProductCard({ product, variant = "default", className, isActive,
           </p>
           <div className="flex items-center gap-2">
             <div className="flex-1">
-              <Button variant="primary" size="sm" className="w-full text-[10px] md:text-xs h-7 md:h-8 px-2 md:px-3">
+              <Button 
+                variant="default" 
+                className="w-full text-[9px] md:text-xs h-7 md:h-10 px-3 md:px-6 rounded-full font-bold uppercase tracking-wider shadow-md hover:shadow-primary/20 transition-all duration-300"
+              >
                 Learn More
               </Button>
             </div>
